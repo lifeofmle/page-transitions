@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Product Listing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-  <script src="main.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css">
 </head>
+
 <body>
-  Product listing
+  <div class="container">
+    <main id="swup" class="transition-fade">
+      <h1 class="transition-slide">Listing</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.</p>
+      <a href="/details.html">
+        <div class="product-image" class="transition-grow">Product details</div>
+      </a>
+    </main>
+  </div>
+
+  <script src="assets/js/swup.min.js"></script>
+  <script>
+    const swup = new Swup();
+  </script>
 </body>
 </html>
