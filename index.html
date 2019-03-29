@@ -4,26 +4,55 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Product Listing</title>
+  <title>Product Details</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css">
 </head>
 
 <body>
   <div class="container">
+    <div id="images" class="images transition-fade">
+      <a href="/1.html"><div class='circle'>1</div></a>
+      <a href="/2.html"><div class='circle'>2</div></a>
+      <a href="/3.html"><div class='circle'>3</div></a>
+      <a href="/4.html"><div class='circle'>4</div></a>
+      <a href="/5.html"><div class='circle'>5</div></a>
+      <a href="/6.html"><div class='circle'>6</div></a>
+    </div>
     <main id="swup" class="transition-fade">
-      <h1 class="transition-slide">Listing</h1>
+      <h1 class="">Listing</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua.</p>
-      <a href="/details.html">
-        <div class="product-image" class="transition-grow">Product details</div>
-      </a>
     </main>
   </div>
 
   <script src="assets/js/swup.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
   <script>
-    const swup = new Swup();
+    let root = document.documentElement;
+
+    options = {
+      elements: ['#swup',"#images"],
+      debugMode: true
+    }
+    const swup = new Swup(options);
+
+    swup.on('contentReplaced', function () {
+      swup.options.elements.forEach((selector) => {
+        console.log(selector);
+          // load scripts for all elements with 'selector'
+      })
+    });
+
+    swup.on('clickLink', function(e) {
+      console.log('Clicked ', e);
+      if (!e.target.href) {
+        root.style.setProperty('--productX', e.clientX + "px");
+      }
+    });
   </script>
 </body>
 </html>

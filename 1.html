@@ -11,12 +11,12 @@
 
 <body>
   <div class="container">
-      <div class="product-hero">
-          <div class="product-image">Product image</div>
-        </div>
-    <main id="swup"  class="transition-fade">
-      
+    <div id="images" class="transition-slide-left">
+      <div class='circle big'>1</div>
+    </div>
+    <main id="swup" class="transition-fade">
       <h1 class="transition-slide">Details</h1>
+      <p class="page-test">Bye bye</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua.</p>
       <a href="/index.html">Go back</a>
@@ -25,7 +25,11 @@
 
   <script src="assets/js/swup.min.js"></script>
   <script>
-    const swup = new Swup();
+    options = {
+      elements: ['#swup',"#images"],
+      debugMode: true
+    }
+    const swup = new Swup(options);
   </script>
 </body>
 </html>
